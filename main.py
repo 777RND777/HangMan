@@ -15,10 +15,19 @@ def output(used, amount):
     print()
 
 
-while ans != word:
+while True:
     output(used_attempts, attempts)
     letter = input("Letter: ")
-    if letter in word:
-        print("Nice")
+    used_attempts += 1
+    if letter in ans:
+        print("You have already guessed that letter.")
+    elif letter in word:
+        print("Nice.")
+        for i in range(len(word)):
+            if letter == word[i]:
+                past = ""
+                if i + 1 < len(word):
+                    past = ans[i+1:]
+                ans = ans[:i] + letter + past
     else:
         print("SON OF A BITCH!!!")
