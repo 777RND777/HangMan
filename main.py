@@ -1,11 +1,11 @@
+from words import *
 from outputs import *
 
+
 word = "suspend"
-attempts = len(word)
+attempts = int(1.5 * len(word))
 used_attempts = 0
-answer = ""
-for i in range(len(word)):
-    answer += "_"
+answer = create_answer(word)
 
 
 while True:
@@ -17,5 +17,5 @@ while True:
         if len(letter) == 1:
             answer = letter_in_answer(letter, answer, word)
         if is_end(letter, answer, word, used_attempts, attempts):
-            break
+            word, answer, used_attempts, attempts = default()
         used_attempts += 1
