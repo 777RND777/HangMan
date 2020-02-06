@@ -15,7 +15,6 @@ while True:
     print()
 
     letter = input("Letter: ")
-    used_attempts += 1
     if letter in ans:
         print("You have already guessed that letter.")
     elif letter in word:
@@ -28,3 +27,12 @@ while True:
                 ans = ans[:i] + letter + past
     else:
         print("SON OF A BITCH!!!")
+
+    if ans == word:
+        print("You won! The hidden word : " + word)
+        break
+    if used_attempts == attempts:
+        print("You lost! The hidden word : " + word)
+        break
+
+    used_attempts += 1
