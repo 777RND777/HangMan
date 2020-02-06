@@ -1,15 +1,17 @@
-word = "python"
-ans = ""
-attempts = 0
+word = "suspend"
+attempts = len(word)
 used_attempts = 0
+ans = ""
+for i in range(len(word)):
+    ans += "_"
 
 
 def output(used, amount):
-    print("___________________")
+    print("______________________")
     print("Attempts:", used, "/", amount)
     print("Current:", end=" ")
-    for i in range(len(word)):
-        print("_", end=" ")
+    for i in ans:
+        print(i, end=" ")
     print()
 
 
@@ -19,4 +21,4 @@ while ans != word:
     if letter in word:
         print("Nice")
     else:
-        print("SON OF A BITCH")
+        print("SON OF A BITCH!!!")
