@@ -2,10 +2,8 @@ from words import *
 from outputs import *
 
 
-word = "suspend"
-attempts = int(1.5 * len(word))
+word, answer, attempts = default()
 used_attempts = 0
-answer = create_answer(word)
 
 
 while True:
@@ -17,5 +15,6 @@ while True:
         if len(letter) == 1:
             answer = letter_in_answer(letter, answer, word)
         if is_end(letter, answer, word, used_attempts, attempts):
-            word, answer, used_attempts, attempts = default()
+            word, answer, attempts = default()
+            used_attempts = -1
         used_attempts += 1

@@ -1,3 +1,6 @@
+from random_word import RandomWords
+
+
 def create_answer(word):
     answer = ""
     for i in range(len(word)):
@@ -6,5 +9,6 @@ def create_answer(word):
 
 
 def default():
-    word = "suspend"
-    return word, create_answer(word), -1, int(1.5 * len(word))
+    r = RandomWords()
+    word = r.get_random_word(hasDictionaryDef="true")
+    return word, create_answer(word), int(1.5 * len(word))
