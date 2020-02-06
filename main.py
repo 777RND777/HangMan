@@ -6,17 +6,14 @@ for i in range(len(word)):
     ans += "_"
 
 
-def output(used, amount):
+while True:
     print("______________________")
-    print("Attempts:", used, "/", amount)
+    print("Attempts:", used_attempts, "/", attempts)
     print("Current:", end=" ")
     for i in ans:
         print(i, end=" ")
     print()
 
-
-while True:
-    output(used_attempts, attempts)
     letter = input("Letter: ")
     used_attempts += 1
     if letter in ans:
