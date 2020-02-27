@@ -8,10 +8,12 @@ def show_status(ans, used, amount):
 
 
 def letter_in_answer(letter, answer, word):
+    correct = False
     if letter in answer:
         print("You have already guessed that letter.")
     elif letter in word:
         print("Nice.")
+        correct = True
         for i in range(len(word)):
             if letter == word[i]:
                 past = ""
@@ -20,8 +22,7 @@ def letter_in_answer(letter, answer, word):
                 answer = answer[:i] + letter + past
     else:
         print("SON OF A BITCH!!!")
-
-    return answer
+    return answer, correct
 
 
 def is_end(letter, answer, word, used, amount):

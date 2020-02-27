@@ -10,5 +10,5 @@ def create_answer(word):
 
 def default():
     r = RandomWords()
-    word = r.get_random_word(hasDictionaryDef="true")
-    return word, create_answer(word), int(1.5 * len(word))
+    word = r.get_random_word()
+    return word, create_answer(word)
